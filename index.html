@@ -8,21 +8,22 @@
 </head>
 
 <body>
-    <h1>FunRoom's Filter Editor</h1>Beta 1.0<br>
-    <button onclick="saveTextAsFile()">Generate Filter</button>
+    <h1>FunRoom's Filter Editor</h1><hr>
     <table><tr>
-      <td><input type="radio" id="Menu1" name="Menu" value="1" onclick="menu('1');"><label for="Menu1">General</label></td>
-      <td><input type="radio" id="Menu2" name="Menu" value="2" onclick="menu('2'); checked"><label for="Menu2">Currency</label></td>
+      <td><input type="radio" id="Menu1" name="Menu" value="1" onclick="menu('1');" checked><label for="Menu1">General</label></td>
+      <td><input type="radio" id="Menu2" name="Menu" value="2" onclick="menu('2');"><label for="Menu2">Currency</label></td>
       <td><input type="radio" id="Menu3" name="Menu" value="3" onclick="menu('3');"><label for="Menu3">Rare</label></td>
       <td><input type="radio" id="Menu4" name="Menu" value="4" onclick="menu('4');"><label for="Menu4">Uniques</label></td>
       <td><input type="radio" id="Menu5" name="Menu" value="5" onclick="menu('5');"><label for="Menu5">Divination</label></td>
       <td><input type="radio" id="Menu6" name="Menu" value="6" onclick="menu('6');"><label for="Menu6">Map</label></td>
       <td><input type="radio" id="Menu7" name="Menu" value="7" onclick="menu('7');"><label for="Menu7">Recipe</label></td>
       <td><input type="radio" id="Menu8" name="Menu" value="8" onclick="menu('8');"><label for="Menu8">Levelling</label></td>
+      <td><button onclick="saveTextAsFile()">Generate Filter</button></td>
     </tr></table>
-
+    <hr>
     <script src="script.js">
     </script>
+    <br>Version: Beta 1.0
 </body>
 
 </html>

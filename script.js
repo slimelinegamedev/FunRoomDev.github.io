@@ -5,6 +5,7 @@ var currency = ["CurrencyDuplicate.png", "CurrencyAddModToRare.png", "CurrencyMo
 
 var currencyName = ["Mirror of Kalandra", "Exalted Orb", "Divine Orb", "Orb of Regret", "Gemcutter's Prism", "Chaos Orb", "Vaal Orb", "Regal Orb", "Orb of Scouring", "Cartographer's Chisel", "Orb of Alchemy", "Blessed Orb", "Orb of Fusing", "Orb of Chance", "Glassblower's Bauble", "Chromatic Orb", "Jeweller's Orb", "Orb of Alteration", "Orb of Transmutation", "Orb of Augmentation", "Blacksmith's Whetstone", "Armourer's Scrap", "Scroll of Wisdom", "Portal Scroll", "Scroll Fragment", "Transmutation Shard", "Alteration Shard", "Alchemy Shard", "Stacked Deck", "Master Cartographer's Sextant", "Journeyman Cartographer's Sextant", "Apprentice Cartographer's Sextant", "Master Cartographer's Seal", "Journeyman Cartographer's Seal", "Apprentice Cartographer's Seal", "Unshaping Orb", "Perandus Coin", "Silver Coin", "Prophecy", "Whispering Essence of", "Muttering Essence of", "Weeping Essence of", "Wailing Essence of", "Screaming Essence of", "Shrieking Essence of", "Deafening Essence of", "Essence of Hysteria", "Essence of Insanity", "Essence of Horror", "Essence of Delirium", "Remnant of Corruption", "Splinter of Chayula", "Splinter of Uul-Netol", "Splinter of Esh", "Splinter of Xoph", "Splinter of Tul", "Blessing of Chayula", "Blessing of Uul-Netol", "Blessing of Esh", "Blessing of Xoph", "Blessing of Tul", "Eternal Orb", "Imprint", "Albino Rhoa Feather"];
 
+var currencyDefault = ["0", "0", "0", "1", "1", "1", "1", "2", "2", "2", "2", "2", "2", "3", "2", "3", "3", "3", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "2", "2", "2", "3", "2", "2", "3", "2", "1", "3", "1", "1", "1", "1", "1", "1", "1", "1", "2", "2", "2", "2", "2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"];
 var currencyPreset = [{ar:"255", ag:"255", ab:"255", aa:"255", br:"255", bg:"0", bb:"0", ba:"255", b:"45", cr:"255", cg:"0", cb:"0", ca:"255", c:"1", s:"6", sl:"300"},
 {ar:"249", ag:"150", ab:"50", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
 {ar:"213", ag:"159", ab:"0", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
@@ -15,11 +16,19 @@ var currencyPreset = [{ar:"255", ag:"255", ab:"255", aa:"255", br:"255", bg:"0",
 //Also color schemes option will be available to change the filter presets in one click
 //People might want to stick with their previous filter's color scheme and sounds.
 //Neversink's filter is being tested for now.
-//This filter only uses the color scheme of Neversink, but the filter code/grouping will differ.
+//This filter only uses the color scheme of Neversink, but the filter code/grouping will differ
 document.write("<table id='Table1'>");
+document.write("<tr><td></td><td></td><td>Filter Presets</td><td>Preview</td></tr>");
+document.write("<tr>");
+document.write('<td><input type="checkbox" id="d11" name="sixLink_D" onclick="toggle(11)" checked><label id="s11" for="d11">Show</label>');
+document.write('<td><table><td>Six-Linked Items</td></table></td>');
+document.write('<td>');
+for (j = 1; j <= currencyPreset.length; j++){
+  document.write('<input type="radio" id="c11'+j+'" name = "sixLink" onclick="update(11,' + (j-1) + ')"><label for="c11'+j+'">' + j + '</label>');
+}
+document.write('</td>');
+document.write('<td><table><td name="name" id="n11">Vaal Regalia</td></table></td>');
 document.write("</table>");
-
-document.write("hello");
 
 //The Currency Menu- All currencies are here including those perandus, essence, prophecy, breach league items.
 //Now handling essences by tiers only to avoid long listing of currencies
@@ -27,11 +36,11 @@ document.write("<table id='Table2'>");
 document.write("<tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < currencyName.length; i++) {
     document.write('<tr>');
-    document.write('<td><input type="checkbox" id="currency' + i + '_display" name="currency' + i + '_D" onclick="toggleShow(' + i + ')" checked><label id = "currency' + i + '_label" for="currency' + i + '_display">Show</label>');
+    document.write('<td><input type="checkbox" id="d2' + i + '" name="currency' + i + '_D" onclick="toggle(2' + i + ')" checked><label id = "s2' + i + '" for="d2' + i + '">Show</label>');
     document.write('<td><table><td><img src="Currency/' + currency[i] + '" height="30" width="30"></td></table></td>');
     document.write('<td>');
-    for (j = 1; j <= currencyPreset.length; j++){
-      document.write('<input type="radio" id="currency' + i + '_' + j + '" name="currency' + i + '" value="' + j + '" onclick="update(' + i + ',' + (j-1) + ');"><label for="currency' + i + '_' + j + '">' + j + '</label>');
+    for (j = 0; j < currencyPreset.length; j++){
+      document.write('<input type="radio" id="c2' + i + j + '" name="currency' + i + '" value="' + j + '" onclick="update(2' + i + ',' + j + ');"><label for="c2' + i + j + '">' + j + '</label>');
     }
     //document.write('<input type="radio" id="currency' + i + '_1" name="currency' + i + '" value="1" onclick="update1(' + i + ');"><label for="currency' + i + '_1">1</label>');
     //document.write('<input type="radio" id="currency' + i + '_2" name="currency' + i + '" value="2" onclick="update2(' + i + ');"><label for="currency' + i + '_2">2</label>');
@@ -43,13 +52,12 @@ for (i = 0; i < currencyName.length; i++) {
     //document.write('<input type="radio" id="currency' + i + '_8" name="currency' + i + '" value="8" onclick="update8(' + i + ');"><label for="currency' + i + '_8">8</label>');
     //document.write('<input type="radio" id="currency' + i + '_9" name="currency' + i + '" value="9" onclick="update9(' + i + ');"><label for="currency' + i + '_9">9</label>');
     //document.write('<input type="radio" id="currency' + i + '_10" name="currency' + i + '" value="10" onclick="update10(' + i + ');"><label for="currency' + i + '_10">10</label>');
-    document.write('<td><table><td name="name" id="currency' + i + '_name">' + currencyName[i] + '</td></table></td>');
+    document.write('<td><table><td name="name" id="n2' + i + '">' + currencyName[i] + '</td></table></td>');
     document.write('</td><td>');
     //document.write('<input type="checkbox" id="currency' + i + 'HL" name="HL" value="Y" onclick="updateH(' + i + ');"><label for="currency' + i + 'HL">Highlight</label>');
     document.write('</td></tr>');
 }
 
-document.write("hello");
 document.write("</table>");
 //This will be the place for non-unique crafting bases drops.
 //Users would be able to choose which Tier 1 items to highlight and which to not show.
@@ -88,7 +96,15 @@ document.write("</table>");
 document.write("<table id='Table8'>");
 document.write("</table>");
 //Anything missing will be added here
-
+window.onload = init();
+function init(){
+  menu(1);
+  update('11','0');
+  for (i=0; i<currencyName.length; i++){
+    update('2'+i, currencyDefault[i]);
+    document.getElementById("c2"+i+currencyDefault[i]).checked = true;
+  }
+}
 //Page Changing function since there are too many items in this damn game
 function menu(val){
   for(i=1; i<=8; i++){
@@ -99,27 +115,26 @@ function menu(val){
 }
 
 //Toggling Show/Hide Function in filter
-function toggleShow(val){
-  if (document.getElementById('currency' + val + '_display').checked){
-    document.getElementById('currency' + val + '_label').innerHTML = 'Show';
-    document.getElementById('currency' + val + '_name').style.display = 'block';
-    document.getElementById('currency' + val + '_label').style.backgroundColor = '#888';
+function toggle(val){
+  if (document.getElementById('d' + val).checked){
+    document.getElementById('s' + val).innerHTML = 'Show';
+    document.getElementById('n' + val).style.display = 'block';
+    document.getElementById('s' + val).style.backgroundColor = '#888';
   }
   else {
-    document.getElementById('currency' + val + '_label').innerHTML = 'Hide';
-    document.getElementById('currency' + val + '_name').style.display = 'none';
-    document.getElementById('currency' + val + '_label').style.backgroundColor = '#666';
+    document.getElementById('s' + val).innerHTML = 'Hide';
+    document.getElementById('n' + val).style.display = 'none';
+    document.getElementById('s' + val).style.backgroundColor = '#666';
   }
 }
 
-
 //These are to be combined into update(val, val) once the filter preset class is created
 function update(val, val2){
-  document.getElementById('currency' + val + '_name').style.borderWidth = currencyPreset[val2].c + "px";
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "rgba("+currencyPreset[val2].ar+","+currencyPreset[val2].ag+","+currencyPreset[val2].ab+","+(currencyPreset[val2].aa/255)+")";
-  document.getElementById('currency' + val + '_name').style.color = "rgba("+currencyPreset[val2].br+","+currencyPreset[val2].bg+","+currencyPreset[val2].bb+","+(currencyPreset[val2].ba/255)+")";
-  document.getElementById('currency' + val + '_name').style.borderColor = "rgba("+currencyPreset[val2].cr+","+currencyPreset[val2].cg+","+currencyPreset[val2].cb+","+(currencyPreset[val2].ca/255)+")";
-  document.getElementById('currency' + val + '_name').style.fontSize = (currencyPreset[val2].b/2) + "px";
+  document.getElementById('n' + val).style.borderWidth = currencyPreset[val2].c + "px";
+  document.getElementById('n' + val).style.backgroundColor = "rgba("+currencyPreset[val2].ar+","+currencyPreset[val2].ag+","+currencyPreset[val2].ab+","+(currencyPreset[val2].aa/255)+")";
+  document.getElementById('n' + val).style.color = "rgba("+currencyPreset[val2].br+","+currencyPreset[val2].bg+","+currencyPreset[val2].bb+","+(currencyPreset[val2].ba/255)+")";
+  document.getElementById('n' + val).style.borderColor = "rgba("+currencyPreset[val2].cr+","+currencyPreset[val2].cg+","+currencyPreset[val2].cb+","+(currencyPreset[val2].ca/255)+")";
+  document.getElementById('n' + val).style.fontSize = (currencyPreset[val2].b/2) + "px";
 }
 
 function updateH(val){
