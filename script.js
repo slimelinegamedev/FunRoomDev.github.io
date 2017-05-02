@@ -5,6 +5,11 @@ var currency = ["CurrencyDuplicate.png", "CurrencyAddModToRare.png", "CurrencyMo
 
 var currencyName = ["Mirror of Kalandra", "Exalted Orb", "Divine Orb", "Orb of Regret", "Gemcutter's Prism", "Chaos Orb", "Vaal Orb", "Regal Orb", "Orb of Scouring", "Cartographer's Chisel", "Orb of Alchemy", "Blessed Orb", "Orb of Fusing", "Orb of Chance", "Glassblower's Bauble", "Chromatic Orb", "Jeweller's Orb", "Orb of Alteration", "Orb of Transmutation", "Orb of Augmentation", "Blacksmith's Whetstone", "Armourer's Scrap", "Scroll of Wisdom", "Portal Scroll", "Scroll Fragment", "Transmutation Shard", "Alteration Shard", "Alchemy Shard", "Stacked Deck", "Master Cartographer's Sextant", "Journeyman Cartographer's Sextant", "Apprentice Cartographer's Sextant", "Master Cartographer's Seal", "Journeyman Cartographer's Seal", "Apprentice Cartographer's Seal", "Unshaping Orb", "Perandus Coin", "Silver Coin", "Prophecy", "Whispering Essence of", "Muttering Essence of", "Weeping Essence of", "Wailing Essence of", "Screaming Essence of", "Shrieking Essence of", "Deafening Essence of", "Essence of Hysteria", "Essence of Insanity", "Essence of Horror", "Essence of Delirium", "Remnant of Corruption", "Splinter of Chayula", "Splinter of Uul-Netol", "Splinter of Esh", "Splinter of Xoph", "Splinter of Tul", "Blessing of Chayula", "Blessing of Uul-Netol", "Blessing of Esh", "Blessing of Xoph", "Blessing of Tul", "Eternal Orb", "Imprint", "Albino Rhoa Feather"];
 
+var currencyPreset = [{ar:"255", ag:"255", ab:"255", aa:"255", br:"255", bg:"0", bb:"0", ba:"255", b:"45", cr:"255", cg:"0", cb:"0", ca:"255", c:"1", s:"6", sl:"300"},
+{ar:"249", ag:"150", ab:"50", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
+{ar:"213", ag:"159", ab:"0", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
+{ar:"0", ag:"0", ab:"0", aa:"255", br:"210", bg:"178", bb:"135", ba:"255", b:"40", cr:"213", cg:"159", cb:"100", ca:"200", c:"1", s:"0", sl:"0"},
+{ar:"0", ag:"0", ab:"0", aa:"255", br:"170", bg:"158", bb:"130", ba:"255", b:"36", cr:"190", cg:"178", cb:"135", ca:"110", c:"1", s:"0", sl:"0"}];
 //This will be the place for general stuffs
 //Like links, sockets, and other stuffs
 //Also color schemes option will be available to change the filter presets in one click
@@ -20,20 +25,24 @@ document.write("hello");
 //Now handling essences by tiers only to avoid long listing of currencies
 document.write("<table id='Table2'>");
 document.write("<tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
-for (i = 0; i < currency.length; i++) {
+for (i = 0; i < currencyName.length; i++) {
     document.write('<tr>');
     document.write('<td><input type="checkbox" id="currency' + i + '_display" name="currency' + i + '_D" onclick="toggleShow(' + i + ')" checked><label id = "currency' + i + '_label" for="currency' + i + '_display">Show</label>');
-    document.write('<td><table><td><img src="Currency/' + currency[i] + '"></td></table></td>');
-    document.write('<td><input type="radio" id="currency' + i + '_1" name="currency' + i + '" value="1" onclick="update1(' + i + ');"><label for="currency' + i + '_1">1</label>');
-    document.write('<input type="radio" id="currency' + i + '_2" name="currency' + i + '" value="2" onclick="update2(' + i + ');"><label for="currency' + i + '_2">2</label>');
-    document.write('<input type="radio" id="currency' + i + '_3" name="currency' + i + '" value="3" onclick="update3(' + i + ');"><label for="currency' + i + '_3">3</label>');
-    document.write('<input type="radio" id="currency' + i + '_4" name="currency' + i + '" value="4" onclick="update4(' + i + ');"><label for="currency' + i + '_4">4</label>');
-    document.write('<input type="radio" id="currency' + i + '_5" name="currency' + i + '" value="5" onclick="update5(' + i + ');"><label for="currency' + i + '_5">5</label>');
-    document.write('<input type="radio" id="currency' + i + '_6" name="currency' + i + '" value="6" onclick="update6(' + i + ');"><label for="currency' + i + '_6">6</label>');
-    document.write('<input type="radio" id="currency' + i + '_7" name="currency' + i + '" value="7" onclick="update7(' + i + ');"><label for="currency' + i + '_7">7</label>');
-    document.write('<input type="radio" id="currency' + i + '_8" name="currency' + i + '" value="8" onclick="update8(' + i + ');"><label for="currency' + i + '_8">8</label>');
-    document.write('<input type="radio" id="currency' + i + '_9" name="currency' + i + '" value="9" onclick="update9(' + i + ');"><label for="currency' + i + '_9">9</label>');
-    document.write('<input type="radio" id="currency' + i + '_10" name="currency' + i + '" value="10" onclick="update10(' + i + ');"><label for="currency' + i + '_10">10</label>');
+    document.write('<td><table><td><img src="Currency/' + currency[i] + '" height="30" width="30"></td></table></td>');
+    document.write('<td>');
+    for (j = 1; j <= currencyPreset.length; j++){
+      document.write('<input type="radio" id="currency' + i + '_' + j + '" name="currency' + i + '" value="' + j + '" onclick="update(' + i + ',' + (j-1) + ');"><label for="currency' + i + '_' + j + '">' + j + '</label>');
+    }
+    //document.write('<input type="radio" id="currency' + i + '_1" name="currency' + i + '" value="1" onclick="update1(' + i + ');"><label for="currency' + i + '_1">1</label>');
+    //document.write('<input type="radio" id="currency' + i + '_2" name="currency' + i + '" value="2" onclick="update2(' + i + ');"><label for="currency' + i + '_2">2</label>');
+    //document.write('<input type="radio" id="currency' + i + '_3" name="currency' + i + '" value="3" onclick="update3(' + i + ');"><label for="currency' + i + '_3">3</label>');
+    //document.write('<input type="radio" id="currency' + i + '_4" name="currency' + i + '" value="4" onclick="update4(' + i + ');"><label for="currency' + i + '_4">4</label>');
+    //document.write('<input type="radio" id="currency' + i + '_5" name="currency' + i + '" value="5" onclick="update5(' + i + ');"><label for="currency' + i + '_5">5</label>');
+    //document.write('<input type="radio" id="currency' + i + '_6" name="currency' + i + '" value="6" onclick="update6(' + i + ');"><label for="currency' + i + '_6">6</label>');
+    //document.write('<input type="radio" id="currency' + i + '_7" name="currency' + i + '" value="7" onclick="update7(' + i + ');"><label for="currency' + i + '_7">7</label>');
+    //document.write('<input type="radio" id="currency' + i + '_8" name="currency' + i + '" value="8" onclick="update8(' + i + ');"><label for="currency' + i + '_8">8</label>');
+    //document.write('<input type="radio" id="currency' + i + '_9" name="currency' + i + '" value="9" onclick="update9(' + i + ');"><label for="currency' + i + '_9">9</label>');
+    //document.write('<input type="radio" id="currency' + i + '_10" name="currency' + i + '" value="10" onclick="update10(' + i + ');"><label for="currency' + i + '_10">10</label>');
     document.write('<td><table><td name="name" id="currency' + i + '_name">' + currencyName[i] + '</td></table></td>');
     document.write('</td><td>');
     //document.write('<input type="checkbox" id="currency' + i + 'HL" name="HL" value="Y" onclick="updateH(' + i + ');"><label for="currency' + i + 'HL">Highlight</label>');
@@ -105,79 +114,12 @@ function toggleShow(val){
 
 
 //These are to be combined into update(val, val) once the filter preset class is created
-function update1(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "rgba(255,255,255,1)";
-  document.getElementById('currency' + val + '_name').style.color = "Red";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "1px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "Red";
-  document.getElementById('currency' + val + '_name').style.fontSize = "23px";
-}
-
-function update2(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#F99619";
-  document.getElementById('currency' + val + '_name').style.color = "Black";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "1px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "Black";
-  document.getElementById('currency' + val + '_name').style.fontSize = "21px";
-}
-
-function update3(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#D59F00";
-  document.getElementById('currency' + val + '_name').style.color = "Black";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "1px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "Black";
-  document.getElementById('currency' + val + '_name').style.fontSize = "21px";
-}
-
-function update4(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "rgba(210,178,135,1)";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "1px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "20px";
-}
-
-function update5(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "#AA9E82";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "0px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "18px";
-}
-function update6(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "#AA9E82";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "0px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "18px";
-}
-function update7(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "#AA9E82";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "0px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "18px";
-}
-function update8(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "#AA9E82";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "0px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "18px";
-}
-function update9(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "#AA9E82";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "0px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "18px";
-}
-function update10(val){
-  document.getElementById('currency' + val + '_name').style.backgroundColor = "#424242";
-  document.getElementById('currency' + val + '_name').style.color = "#AA9E82";
-  document.getElementById('currency' + val + '_name').style.borderWidth = "0px";
-  document.getElementById('currency' + val + '_name').style.borderColor = "#D2B287";
-  document.getElementById('currency' + val + '_name').style.fontSize = "18px";
+function update(val, val2){
+  document.getElementById('currency' + val + '_name').style.borderWidth = currencyPreset[val2].c + "px";
+  document.getElementById('currency' + val + '_name').style.backgroundColor = "rgba("+currencyPreset[val2].ar+","+currencyPreset[val2].ag+","+currencyPreset[val2].ab+","+(currencyPreset[val2].aa/255)+")";
+  document.getElementById('currency' + val + '_name').style.color = "rgba("+currencyPreset[val2].br+","+currencyPreset[val2].bg+","+currencyPreset[val2].bb+","+(currencyPreset[val2].ba/255)+")";
+  document.getElementById('currency' + val + '_name').style.borderColor = "rgba("+currencyPreset[val2].cr+","+currencyPreset[val2].cg+","+currencyPreset[val2].cb+","+(currencyPreset[val2].ca/255)+")";
+  document.getElementById('currency' + val + '_name').style.fontSize = (currencyPreset[val2].b/2) + "px";
 }
 
 function updateH(val){
