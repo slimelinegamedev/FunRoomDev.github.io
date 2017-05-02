@@ -10,7 +10,7 @@ var currencyPreset = [{ar:"255", ag:"255", ab:"255", aa:"255", br:"255", bg:"0",
 {ar:"249", ag:"150", ab:"50", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
 {ar:"213", ag:"159", ab:"0", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
 {ar:"0", ag:"0", ab:"0", aa:"255", br:"210", bg:"178", bb:"135", ba:"255", b:"40", cr:"213", cg:"159", cb:"100", ca:"200", c:"1", s:"0", sl:"0"},
-{ar:"0", ag:"0", ab:"0", aa:"255", br:"170", bg:"158", bb:"130", ba:"255", b:"36", cr:"190", cg:"178", cb:"135", ca:"110", c:"1", s:"0", sl:"0"}];
+{ar:"0", ag:"0", ab:"0", aa:"255", br:"170", bg:"158", bb:"130", ba:"255", b:"36", cr:"190", cg:"178", cb:"135", ca:"110", c:"0", s:"0", sl:"0"}];
 //This will be the place for general stuffs
 //Like links, sockets, and other stuffs
 //Also color schemes option will be available to change the filter presets in one click
@@ -19,15 +19,27 @@ var currencyPreset = [{ar:"255", ag:"255", ab:"255", aa:"255", br:"255", bg:"0",
 //This filter only uses the color scheme of Neversink, but the filter code/grouping will differ
 document.write("<table id='Table1'>");
 document.write("<tr><td></td><td></td><td>Filter Presets</td><td>Preview</td></tr>");
-document.write("<tr>");
-document.write('<td><input type="checkbox" id="d11" name="sixLink_D" onclick="toggle(11)" checked><label id="s11" for="d11">Show</label>');
+document.write('<tr><td><input type="checkbox" id="d11" onclick="toggle(11)" checked><label id="s11" for="d11">Show</label>');
 document.write('<td><table><td>Six-Linked Items</td></table></td>');
 document.write('<td>');
-for (j = 1; j <= currencyPreset.length; j++){
-  document.write('<input type="radio" id="c11'+j+'" name = "sixLink" onclick="update(11,' + (j-1) + ')"><label for="c11'+j+'">' + j + '</label>');
+for (j = 0; j < currencyPreset.length; j++){
+  document.write('<input type="radio" id="c11'+j+'" name = "sixLink" onclick="update(11,' + j + ')"><label for="c11'+j+'">' + (j+1) + '</label>');
 }
-document.write('</td>');
-document.write('<td><table><td name="name" id="n11">Vaal Regalia</td></table></td>');
+document.write('</td><td><table><td name="name" id="n11">Vaal Regalia</td></table></td></tr>');
+
+document.write('<tr><td><input type="checkbox" id="d12" onclick="toggle(12)" checked><label id="s12" for="d12">Show</label>');
+document.write('<td><table><td>Six-Socketed Items</td></table></td><td>');
+for (j = 0; j < currencyPreset.length; j++){
+  document.write('<input type="radio" id="c12'+j+'" name = "sixSocket" onclick="update(12,' + j + ')"><label for="c12'+j+'">' + (j+1) + '</label>');
+}
+document.write('</td><td><table><td name="name" id="n12">Vaal Regalia</td></table></td></tr>');
+
+document.write('<tr><td><input type="checkbox" id="d13" onclick="toggle(13)" checked><label id="s13" for="d13">Show</label>');
+document.write('<td><table><td>Five-Linked Items</td></table></td><td>');
+for (j = 0; j < currencyPreset.length; j++){
+  document.write('<input type="radio" id="c13'+j+'" name = "fiveLink" onclick="update(13,' + j + ')"><label for="c13'+j+'">' + (j+1) + '</label>');
+}
+document.write('</td><td><table><td name="name" id="n13">Vaal Regalia</td></table></td></tr>');
 document.write("</table>");
 
 //The Currency Menu- All currencies are here including those perandus, essence, prophecy, breach league items.
@@ -36,11 +48,11 @@ document.write("<table id='Table2'>");
 document.write("<tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < currencyName.length; i++) {
     document.write('<tr>');
-    document.write('<td><input type="checkbox" id="d2' + i + '" name="currency' + i + '_D" onclick="toggle(2' + i + ')" checked><label id = "s2' + i + '" for="d2' + i + '">Show</label>');
+    document.write('<td><input type="checkbox" id="d2' + i + '" onclick="toggle(2' + i + ')" checked><label id = "s2' + i + '" for="d2' + i + '">Show</label>');
     document.write('<td><table><td><img src="Currency/' + currency[i] + '" height="30" width="30"></td></table></td>');
     document.write('<td>');
     for (j = 0; j < currencyPreset.length; j++){
-      document.write('<input type="radio" id="c2' + i + j + '" name="currency' + i + '" value="' + j + '" onclick="update(2' + i + ',' + j + ');"><label for="c2' + i + j + '">' + j + '</label>');
+      document.write('<input type="radio" id="c2' + i + j + '" name="currency' + i + '" value="' + j + '" onclick="update(2' + i + ',' + j + ');"><label for="c2' + i + j + '">' + (j+1) + '</label>');
     }
     //document.write('<input type="radio" id="currency' + i + '_1" name="currency' + i + '" value="1" onclick="update1(' + i + ');"><label for="currency' + i + '_1">1</label>');
     //document.write('<input type="radio" id="currency' + i + '_2" name="currency' + i + '" value="2" onclick="update2(' + i + ');"><label for="currency' + i + '_2">2</label>');
@@ -100,6 +112,11 @@ window.onload = init();
 function init(){
   menu(1);
   update('11','0');
+  document.getElementById("c110").checked = true;
+  update('12','1');
+  document.getElementById("c121").checked = true;
+  update('13','3');
+  document.getElementById("c133").checked = true;
   for (i=0; i<currencyName.length; i++){
     update('2'+i, currencyDefault[i]);
     document.getElementById("c2"+i+currencyDefault[i]).checked = true;
@@ -147,11 +164,15 @@ function saveTextAsFile() {
         textToSave = textToSave + "Show\r\n";
         textToSave = textToSave + "Class Currency\r\n";
         textToSave = textToSave + "BaseType \"" + currencyName[i] + "\"\r\n";
-        textToSave = textToSave + "SetFontSize 45" + "\r\n";
-        textToSave = textToSave + "SetTextColor 255 0 0 255" + "\r\n";
-        textToSave = textToSave + "SetBorderColor 255 0 0 255" + "\r\n";
-        textToSave = textToSave + "SetBackgroundColor 255 255 255 255" + "\r\n";
-        textToSave = textToSave + "PlayAlertSound 6 300" + "\r\n";
+        textToSave = textToSave + "SetFontSize " + currencyPreset[currencyDefault[i]].b + "\r\n";
+        textToSave = textToSave + "SetTextColor " + currencyPreset[currencyDefault[i]].br + " " + currencyPreset[currencyDefault[i]].bg + " " + currencyPreset[currencyDefault[i]].bb + " " + currencyPreset[currencyDefault[i]].ba + "\r\n";
+        if (currencyPreset[currencyDefault[i]].c != "0"){
+          textToSave = textToSave + "SetBorderColor " + currencyPreset[currencyDefault[i]].cr + " " + currencyPreset[currencyDefault[i]].cg + " " + currencyPreset[currencyDefault[i]].cb + " " + currencyPreset[currencyDefault[i]].ca + "\r\n";
+        }
+        textToSave = textToSave + "SetBackgroundColor " + currencyPreset[currencyDefault[i]].ar + " " + currencyPreset[currencyDefault[i]].ag + " " + currencyPreset[currencyDefault[i]].ab + " " + currencyPreset[currencyDefault[i]].aa + "\r\n";
+        if (currencyPreset[currencyDefault[i]].s != "0"){
+          textToSave = textToSave + "PlayAlertSound " + currencyPreset[currencyDefault[i]].s + " " + currencyPreset[currencyDefault[i]].sl + "\r\n";
+        }
         textToSave = textToSave + "\r\n";
     }
     var textToSaveAsBlob = new Blob([textToSave], {
