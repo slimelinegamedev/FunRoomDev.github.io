@@ -5,12 +5,18 @@ var currency = ["CurrencyDuplicate.png", "CurrencyAddModToRare.png", "CurrencyMo
 
 var currencyName = ["Mirror of Kalandra", "Exalted Orb", "Divine Orb", "Orb of Regret", "Gemcutter's Prism", "Chaos Orb", "Vaal Orb", "Regal Orb", "Orb of Scouring", "Cartographer's Chisel", "Orb of Alchemy", "Blessed Orb", "Orb of Fusing", "Orb of Chance", "Glassblower's Bauble", "Chromatic Orb", "Jeweller's Orb", "Orb of Alteration", "Orb of Transmutation", "Orb of Augmentation", "Blacksmith's Whetstone", "Armourer's Scrap", "Scroll of Wisdom", "Portal Scroll", "Scroll Fragment", "Transmutation Shard", "Alteration Shard", "Alchemy Shard", "Stacked Deck", "Master Cartographer's Sextant", "Journeyman Cartographer's Sextant", "Apprentice Cartographer's Sextant", "Master Cartographer's Seal", "Journeyman Cartographer's Seal", "Apprentice Cartographer's Seal", "Unshaping Orb", "Perandus Coin", "Silver Coin", "Prophecy", "Whispering Essence of", "Muttering Essence of", "Weeping Essence of", "Wailing Essence of", "Screaming Essence of", "Shrieking Essence of", "Deafening Essence of", "Essence of Hysteria", "Essence of Insanity", "Essence of Horror", "Essence of Delirium", "Remnant of Corruption", "Splinter of Chayula", "Splinter of Uul-Netol", "Splinter of Esh", "Splinter of Xoph", "Splinter of Tul", "Blessing of Chayula", "Blessing of Uul-Netol", "Blessing of Esh", "Blessing of Xoph", "Blessing of Tul", "Eternal Orb", "Imprint", "Albino Rhoa Feather"];
 
-var currencyDefault = ["0", "0", "0", "1", "1", "1", "1", "2", "2", "2", "2", "2", "2", "3", "2", "3", "3", "3", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "2", "2", "2", "3", "2", "2", "3", "2", "1", "3", "1", "1", "1", "1", "1", "1", "1", "1", "2", "2", "2", "2", "2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"];
+var currencyDefault = ["0", "0", "0", "1", "1", "1", "1", "2", "2", "2", "2", "2", "2", "3", "2", "3", "3", "3", "4", "4", "4", "5", "5", "5", "5", "5", "5", "5", "2", "2", "2", "3", "2", "2", "3", "2", "8", "3", "7", "5", "5", "4", "3", "2", "1", "1", "1", "1", "1", "1", "1", "7", "7", "7", "7", "7", "6", "6", "6", "6", "6", "0", "0", "0"];
 var currencyPreset = [{ar:"255", ag:"255", ab:"255", aa:"255", br:"255", bg:"0", bb:"0", ba:"255", b:"45", cr:"255", cg:"0", cb:"0", ca:"255", c:"1", s:"6", sl:"300"},
 {ar:"249", ag:"150", ab:"50", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
 {ar:"213", ag:"159", ab:"0", aa:"255", br:"0", bg:"0", bb:"0", ba:"255", b:"42", cr:"0", cg:"0", cb:"0", ca:"255", c:"1", s:"2", sl:"300"},
-{ar:"0", ag:"0", ab:"0", aa:"255", br:"210", bg:"178", bb:"135", ba:"255", b:"40", cr:"213", cg:"159", cb:"100", ca:"200", c:"1", s:"0", sl:"0"},
-{ar:"0", ag:"0", ab:"0", aa:"255", br:"170", bg:"158", bb:"130", ba:"255", b:"36", cr:"190", cg:"178", cb:"135", ca:"110", c:"0", s:"0", sl:"0"}];
+{ar:"0", ag:"0", ab:"0", aa:"240", br:"210", bg:"178", bb:"135", ba:"255", b:"40", cr:"213", cg:"159", cb:"100", ca:"200", c:"1", s:"0", sl:"0"},
+{ar:"0", ag:"0", ab:"0", aa:"240", br:"170", bg:"158", bb:"130", ba:"255", b:"36", cr:"190", cg:"178", cb:"135", ca:"110", c:"1", s:"0", sl:"0"},
+{ar:"0", ag:"0", ab:"0", aa:"240", br:"170", bg:"158", bb:"130", ba:"220", b:"32", cr:"60", cg:"50", cb:"30", ca:"255", c:"1", s:"0", sl:"0"},
+{ar:"255", ag:"255", ab:"255", aa:"255", br:"130", bg:"25", bb:"255", ba:"255", b:"45", cr:"130", cg:"25", cb:"255", ca:"255", c:"1", s:"6", sl:"300"},
+{ar:"60", ag:"20", ab:"80", aa:"240", br:"255", bg:"235", bb:"235", ba:"255", b:"40", cr:"230", cg:"25", cb:"255", ca:"255", c:"1", s:"2", sl:"100"},
+{ar:"0", ag:"0", ab:"0", aa:"240", br:"255", bg:"178", bb:"135", ba:"255", b:"38", cr:"255", cg:"178", cb:"135", ca:"255", c:"1", s:"0", sl:"0"}];
+
+
 //This will be the place for general stuffs
 //Like links, sockets, and other stuffs
 //Also color schemes option will be available to change the filter presets in one click
@@ -54,16 +60,6 @@ for (i = 0; i < currencyName.length; i++) {
     for (j = 0; j < currencyPreset.length; j++){
       document.write('<input type="radio" id="c2' + i + j + '" name="currency' + i + '" value="' + j + '" onclick="update(2' + i + ',' + j + ');"><label for="c2' + i + j + '">' + (j+1) + '</label>');
     }
-    //document.write('<input type="radio" id="currency' + i + '_1" name="currency' + i + '" value="1" onclick="update1(' + i + ');"><label for="currency' + i + '_1">1</label>');
-    //document.write('<input type="radio" id="currency' + i + '_2" name="currency' + i + '" value="2" onclick="update2(' + i + ');"><label for="currency' + i + '_2">2</label>');
-    //document.write('<input type="radio" id="currency' + i + '_3" name="currency' + i + '" value="3" onclick="update3(' + i + ');"><label for="currency' + i + '_3">3</label>');
-    //document.write('<input type="radio" id="currency' + i + '_4" name="currency' + i + '" value="4" onclick="update4(' + i + ');"><label for="currency' + i + '_4">4</label>');
-    //document.write('<input type="radio" id="currency' + i + '_5" name="currency' + i + '" value="5" onclick="update5(' + i + ');"><label for="currency' + i + '_5">5</label>');
-    //document.write('<input type="radio" id="currency' + i + '_6" name="currency' + i + '" value="6" onclick="update6(' + i + ');"><label for="currency' + i + '_6">6</label>');
-    //document.write('<input type="radio" id="currency' + i + '_7" name="currency' + i + '" value="7" onclick="update7(' + i + ');"><label for="currency' + i + '_7">7</label>');
-    //document.write('<input type="radio" id="currency' + i + '_8" name="currency' + i + '" value="8" onclick="update8(' + i + ');"><label for="currency' + i + '_8">8</label>');
-    //document.write('<input type="radio" id="currency' + i + '_9" name="currency' + i + '" value="9" onclick="update9(' + i + ');"><label for="currency' + i + '_9">9</label>');
-    //document.write('<input type="radio" id="currency' + i + '_10" name="currency' + i + '" value="10" onclick="update10(' + i + ');"><label for="currency' + i + '_10">10</label>');
     document.write('<td><table><td name="name" id="n2' + i + '">' + currencyName[i] + '</td></table></td>');
     document.write('</td><td>');
     //document.write('<input type="checkbox" id="currency' + i + 'HL" name="HL" value="Y" onclick="updateH(' + i + ');"><label for="currency' + i + 'HL">Highlight</label>');
@@ -160,18 +156,29 @@ function updateH(val){
 
 function saveTextAsFile() {
     var textToSave = "";
+    var temp;
     for (i = 0; i < currency.length; i++) {
+      temp = 0;
+      for (j = 0; j < currencyPreset.length; j++){
+        if (document.getElementById('c2'+i+j).checked) {
+          temp = j;
+        }
+      }
+      if (document.getElementById('d2'+i).checked){
         textToSave = textToSave + "Show\r\n";
+      }else {
+        textToSave = textToSave + "Hide\r\n";
+      }
         textToSave = textToSave + "Class Currency\r\n";
         textToSave = textToSave + "BaseType \"" + currencyName[i] + "\"\r\n";
-        textToSave = textToSave + "SetFontSize " + currencyPreset[currencyDefault[i]].b + "\r\n";
-        textToSave = textToSave + "SetTextColor " + currencyPreset[currencyDefault[i]].br + " " + currencyPreset[currencyDefault[i]].bg + " " + currencyPreset[currencyDefault[i]].bb + " " + currencyPreset[currencyDefault[i]].ba + "\r\n";
-        if (currencyPreset[currencyDefault[i]].c != "0"){
-          textToSave = textToSave + "SetBorderColor " + currencyPreset[currencyDefault[i]].cr + " " + currencyPreset[currencyDefault[i]].cg + " " + currencyPreset[currencyDefault[i]].cb + " " + currencyPreset[currencyDefault[i]].ca + "\r\n";
+        textToSave = textToSave + "SetFontSize " + currencyPreset[temp].b + "\r\n";
+        textToSave = textToSave + "SetTextColor " + currencyPreset[temp].br + " " + currencyPreset[temp].bg + " " + currencyPreset[temp].bb + " " + currencyPreset[temp].ba + "\r\n";
+        if (currencyPreset[temp].c != "0"){
+          textToSave = textToSave + "SetBorderColor " + currencyPreset[temp].cr + " " + currencyPreset[temp].cg + " " + currencyPreset[temp].cb + " " + currencyPreset[temp].ca + "\r\n";
         }
-        textToSave = textToSave + "SetBackgroundColor " + currencyPreset[currencyDefault[i]].ar + " " + currencyPreset[currencyDefault[i]].ag + " " + currencyPreset[currencyDefault[i]].ab + " " + currencyPreset[currencyDefault[i]].aa + "\r\n";
-        if (currencyPreset[currencyDefault[i]].s != "0"){
-          textToSave = textToSave + "PlayAlertSound " + currencyPreset[currencyDefault[i]].s + " " + currencyPreset[currencyDefault[i]].sl + "\r\n";
+        textToSave = textToSave + "SetBackgroundColor " + currencyPreset[temp].ar + " " + currencyPreset[temp].ag + " " + currencyPreset[temp].ab + " " + currencyPreset[temp].aa + "\r\n";
+        if (currencyPreset[temp].s != "0"){
+          textToSave = textToSave + "PlayAlertSound " + currencyPreset[temp].s + " " + currencyPreset[temp].sl + "\r\n";
         }
         textToSave = textToSave + "\r\n";
     }
