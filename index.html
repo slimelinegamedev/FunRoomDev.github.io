@@ -85,10 +85,13 @@
       <td><input type="radio" id="Menu7" name="Menu" value="7" onclick="menu('7');"><label for="Menu7">Recipe</label></td>
       <td><input type="radio" id="Menu8" name="Menu" value="8" onclick="menu('8');"><label for="Menu8">Levelling</label></td>
     </tr></table>
+
     <script type="text/javascript">
-        var audio = new Audio('audio_file.mp3');
-//audio.play();
+        //var audio = new Audio('audio_file.mp3');
+        //audio.play();
+
         var currency = ["CurrencyDuplicate.png", "CurrencyAddModToRare.png", "CurrencyModValues.png", "CurrencyPassiveSkillRefund.png", "CurrencyGemQuality.png", "CurrencyRerollRare.png", "CurrencyVaal.png", "CurrencyUpgradeMagicToRare.png", "CurrencyConvertToNormal.png", "CurrencyMapQuality.png", "CurrencyUpgradeToRare.png", "CurrencyImplicitMod.png", "CurrencyRerollSocketLinks.png", "CurrencyUpgradeRandomly.png", "CurrencyFlaskQuality.png", "CurrencyRerollSocketColours.png", "CurrencyRerollSocketNumbers.png", "CurrencyRerollMagic.png", "CurrencyUpgradeToMagic.png", "CurrencyAddModToMagic.png", "CurrencyWeaponQuality.png", "CurrencyArmourQuality.png", "CurrencyIdentification.png", "CurrencyPortal.png", "CurrencyIdentificationFragment.png", "CurrencyUpgradeToMagicShard.png", "CurrencyRerollMagicShard.png", "CurrencyUpgradeToRareShard.png", "Deck.png", "AtlasRadiusRed.png", "AtlasRadiusYellow.png", "AtlasRadiusWhite.png", "SealRed.png", "SealYellow.png", "SealWhite.png", "AtlasDowngrade.png", "CurrencyCoin.png", "SilverObol.png", "ProphecyOrbRed.png", "Greed1.png", "Greed2.png", "Greed3.png", "Greed4.png", "Greed5.png", "Greed6.png", "Greed7.png", "Terror1.png", "Insanity1.png", "Horror1.png", "Madness1.png", "EssenceCorrupt.png", "BreachShardChaos.png", "BreachShardPhysical.png", "BreachShardLightning.png", "BreachShardFire.png", "BreachShardCold.png", "BreachUpgraderChaos.png", "BreachUpgraderPhysical.png", "BreachUpgraderLightning.png", "BreachUpgraderFire.png", "BreachUpgraderCold.png", "CurrencyImprint.png", "CurrencyImprintOrb.png", "CurrencyRhoaFeather.png"];
+
         var currencyName = ["Mirror of Kalandra", "Exalted Orb", "Divine Orb", "Orb of Regret", "Gemcutter's Prism", "Chaos Orb", "Vaal Orb", "Regal Orb", "Orb of Scouring", "Cartographer's Chisel", "Orb of Alchemy", "Blessed Orb", "Orb of Fusing", "Orb of Chance", "Glassblower's Bauble", "Chromatic Orb", "Jeweller's Orb", "Orb of Alteration", "Orb of Transmutation", "Orb of Augmentation", "Blacksmith's Whetstone", "Armourer's Scrap", "Scroll of Wisdom", "Portal Scroll", "Scroll Fragment", "Transmutation Shard", "Alteration Shard", "Alchemy Shard", "Stacked Deck", "Master Cartographer's Sextant", "Journeyman Cartographer's Sextant", "Apprentice Cartographer's Sextant", "Master Cartographer's Seal", "Journeyman Cartographer's Seal", "Apprentice Cartographer's Seal", "Unshaping Orb", "Perandus Coin", "Silver Coin", "Prophecy", "Whispering Essence of", "Muttering Essence of", "Weeping Essence of", "Wailing Essence of", "Screaming Essence of", "Shrieking Essence of", "Deafening Essence of", "Essence of Hysteria", "Essence of Insanity", "Essence of Horror", "Essence of Delirium", "Remnant of Corruption", "Splinter of Chayula", "Splinter of Uul-Netol", "Splinter of Esh", "Splinter of Xoph", "Splinter of Tul", "Blessing of Chayula", "Blessing of Uul-Netol", "Blessing of Esh", "Blessing of Xoph", "Blessing of Tul", "Eternal Orb", "Imprint", "Albino Rhoa Feather"];
 
         //This will be the place for general stuffs
@@ -100,12 +103,12 @@
         document.write("<table id='Table1'>");
         document.write("</table>");
 
-
+document.write("hello");
 
         //The Currency Menu- All currencies are here including those perandus, essence, prophecy, breach league items.
         //Now handling essences by tiers only to avoid long listing of currencies
         document.write("<table id='Table2'>");
-        document.write("<tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>")
+        document.write("<tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
         for (i = 0; i < currency.length; i++) {
             document.write('<tr>');
             document.write('<td><input type="checkbox" id="currency' + i + '_display" name="currency' + i + '_D" onclick="toggleShow(' + i + ')" checked><label id = "currency' + i + '_label" for="currency' + i + '_display">Show</label>');
@@ -126,7 +129,7 @@
             document.write('</td></tr>');
         }
 
-
+        document.write("hello");
         document.write("</table>");
         //This will be the place for non-unique crafting bases drops.
         //Users would be able to choose which Tier 1 items to highlight and which to not show.
@@ -308,8 +311,7 @@
             fileReader.onload = function (fileLoadedEvent) {
                 var textFromFileLoaded = fileLoadedEvent.target.result;
                 textFromFileSplit = textFromFileLoaded.split("\r\n");
-                }
-            };
+              }
             fileReader.readAsText(fileToLoad, "UTF-8");
         }
     </script>
