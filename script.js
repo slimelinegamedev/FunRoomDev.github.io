@@ -51,7 +51,6 @@ document.write("</table>");
 //The Currency Menu- All currencies are here including those perandus, essence, prophecy, breach league items.
 //Now handling essences by tiers only to avoid long listing of currencies
 
-
 document.write("<table id='Table2'>");
 document.write("<tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < currencyName.length; i++) {
@@ -124,8 +123,13 @@ function init(){
 function menu(val){
   for(i=1; i<=8; i++){
     document.getElementById("Table" + i).style.display = 'none';
+    document.getElementById("sTable" + i).style.display = 'none';
   }
   document.getElementById("Table" + val).style.display = 'block';
+  document.getElementById("sTable" + val).style.display = 'block';
+}
+
+function sMenu(val, val2){
 
 }
 
