@@ -12,15 +12,64 @@
     <table><tr>
       <td><input type="radio" id="Menu1" name="Menu" value="1" onclick="menu('1');" checked><label for="Menu1">General</label></td>
       <td><input type="radio" id="Menu2" name="Menu" value="2" onclick="menu('2');"><label for="Menu2">Currency</label></td>
-      <td><input type="radio" id="Menu3" name="Menu" value="3" onclick="menu('3');"><label for="Menu3">Rare</label></td>
-      <td><input type="radio" id="Menu4" name="Menu" value="4" onclick="menu('4');"><label for="Menu4">Uniques</label></td>
-      <td><input type="radio" id="Menu5" name="Menu" value="5" onclick="menu('5');"><label for="Menu5">Divination</label></td>
-      <td><input type="radio" id="Menu6" name="Menu" value="6" onclick="menu('6');"><label for="Menu6">Map</label></td>
-      <td><input type="radio" id="Menu7" name="Menu" value="7" onclick="menu('7');"><label for="Menu7">Recipe</label></td>
-      <td><input type="radio" id="Menu8" name="Menu" value="8" onclick="menu('8');"><label for="Menu8">Levelling</label></td>
+      <td><input type="radio" id="Menu3" name="Menu" value="3" onclick="menu('3');"><label for="Menu3">Uniques</label></td>
+      <td><input type="radio" id="Menu4" name="Menu" value="4" onclick="menu('4');"><label for="Menu4">Items</label></td>
+      <td><input type="radio" id="Menu5" name="Menu" value="5" onclick="menu('5');"><label for="Menu5">Div Cards</label></td>
+      <td><input type="radio" id="Menu6" name="Menu" value="6" onclick="menu('6');"><label for="Menu6">Maps</label></td>
+      <td><input type="radio" id="Menu7" name="Menu" value="7" onclick="menu('7');"><label for="Menu7">Recipes</label></td>
+      <td><input type="radio" id="Menu8" name="Menu" value="8" onclick="menu('8');"><label for="Menu8">Miscellaneous</label></td>
+      <td><input type="radio" id="Menu9" name="Menu" value="9" onclick="menu('9');"><label for="Menu9">Levelling</label></td>
       <td><button onclick="saveTextAsFile()">Generate Filter</button></td>
     </tr></table>
     <hr>
+    <table id="sTable1"><tr>
+      <td><input type="radio" id="sMenu1_1" name="sMenu1" value="1" onclick="sMenu('1','1');" checked><label for="sMenu1_1">General</label></td>
+      <td><input type="radio" id="sMenu1_2" name="sMenu1" value="2" onclick="sMenu('1','2');"><label for="sMenu1_2">Color Scheme</label></td>
+      <td><input type="radio" id="sMenu1_3" name="sMenu1" value="3" onclick="sMenu('1','3');"><label for="sMenu1_3">Settings</label></td>
+      <td><input type="radio" id="sMenu1_4" name="sMenu1" value="4" onclick="sMenu('1','4');"><label for="sMenu1_4">Others</label></td>
+      <td><input type="radio" id="sMenu1_5" name="sMenu1" value="5" onclick="smenu('1','5');"><label for="sMenu1_5">About</label></td>
+    </tr></table>
+    <table id="sTable2"><tr>
+      <td><input type="radio" id="sMenu2_1" name="sMenu2" value="1" onclick="sMenu('2','1');" checked><label for="sMenu2_1">General</label></td>
+      <td><input type="radio" id="sMenu2_2" name="sMenu2" value="2" onclick="sMenu('2','2');"><label for="sMenu2_2">Perandus</label></td>
+      <td><input type="radio" id="sMenu2_3" name="sMenu2" value="3" onclick="sMenu('2','3');"><label for="sMenu2_3">Prophecy</label></td>
+      <td><input type="radio" id="sMenu2_4" name="sMenu2" value="4" onclick="sMenu('2','4');"><label for="sMenu2_4">Essence</label></td>
+      <td><input type="radio" id="sMenu2_5" name="sMenu2" value="5" onclick="sMenu('2','5');"><label for="sMenu2_5">Breach</label></td>
+    </tr></table>
+    <table id="sTable3"><tr>
+      <td><input type="radio" id="sMenu3_1" name="sMenu3" value="1" onclick="sMenu('3','1');" checked><label for="sMenu3_1">Weapon</label></td>
+      <td><input type="radio" id="sMenu3_2" name="sMenu3" value="2" onclick="sMenu('3','2');"><label for="sMenu3_2">Armour</label></td>
+      <td><input type="radio" id="sMenu3_3" name="sMenu3" value="3" onclick="sMenu('3','3');"><label for="sMenu3_3">Accessory</label></td>
+      <td><input type="radio" id="sMenu3_4" name="sMenu3" value="4" onclick="sMenu('3','4');"><label for="sMenu3_4">Flask</label></td>
+      <td><input type="radio" id="sMenu3_5" name="sMenu3" value="5" onclick="sMenu('3','5');"><label for="sMenu3_5">Map</label></td>
+      <td><input type="radio" id="sMenu3_6" name="sMenu3" value="6" onclick="sMenu('3','6');"><label for="sMenu3_6">Jewel</label></td>
+    </tr></table>
+    <table id="sTable4"><tr>
+      <td><input type="radio" id="sMenu4_1" name="sMenu4" value="1" onclick="sMenu('4','1');" checked><label for="sMenu4_1">General</label></td>
+      <td><input type="radio" id="sMenu4_2" name="sMenu4" value="2" onclick="sMenu('4','2');"><label for="sMenu4_2">Crafting Base</label></td>
+      <td><input type="radio" id="sMenu4_3" name="sMenu4" value="3" onclick="sMenu('4','3');"><label for="sMenu4_3">Chancing Base</label></td>
+      <td><input type="radio" id="sMenu4_4" name="sMenu4" value="4" onclick="sMenu('4','4');"><label for="sMenu4_4">Warbands</label></td>
+      <td><input type="radio" id="sMenu4_5" name="sMenu4" value="5" onclick="sMenu('4','5');"><label for="sMenu4_5">Talisman</label></td>
+      <td><input type="radio" id="sMenu4_6" name="sMenu4" value="6" onclick="sMenu('4','6');"><label for="sMenu4_6">Legacy</label></td>
+    </tr></table>
+    <table id="sTable6"><tr>
+      <td><input type="radio" id="sMenu6_1" name="sMenu6" value="1" onclick="sMenu('6','1');" checked><label for="sMenu6_1">Maps</label></td>
+      <td><input type="radio" id="sMenu6_2" name="sMenu6" value="2" onclick="sMenu('6','2');"><label for="sMenu6_2">Fragments</label></td>
+      <td><input type="radio" id="sMenu6_3" name="sMenu6" value="3" onclick="sMenu('6','3');"><label for="sMenu6_3">Keys</label></td>
+    </tr></table>
+    <table id="sTable7"><tr>
+      <td><input type="radio" id="sMenu7_1" name="sMenu7" value="1" onclick="sMenu('7','1');" checked><label for="sMenu7_1">Chaos</label></td>
+      <td><input type="radio" id="sMenu7_2" name="sMenu7" value="2" onclick="sMenu('7','2');"><label for="sMenu7_2">Chromatic</label></td>
+      <td><input type="radio" id="sMenu7_3" name="sMenu7" value="3" onclick="sMenu('7','3');"><label for="sMenu7_3">Chisel</label></td>
+      <td><input type="radio" id="sMenu7_4" name="sMenu7" value="4" onclick="sMenu('7','4');"><label for="sMenu7_4">Gemcutter</label></td>
+      <td><input type="radio" id="sMenu7_5" name="sMenu7" value="5" onclick="sMenu('7','5');"><label for="sMenu7_5">Glassblower</label></td>
+      <td><input type="radio" id="sMenu7_6" name="sMenu7" value="5" onclick="sMenu('7','6');"><label for="sMenu7_6">Others</label></td>
+    </tr></table>
+    <table id="sTable8"><tr>
+      <td><input type="radio" id="sMenu8_1" name="sMenu8" value="1" onclick="sMenu('8','1');" checked><label for="sMenu8_1">Gems</label></td>
+      <td><input type="radio" id="sMenu8_2" name="sMenu8" value="2" onclick="sMenu('8','2');"><label for="sMenu8_2">Flasks</label></td>
+    </tr></table>
+    <br>
     <script src="script.js">
     </script>
     <br>Version: Beta 1.0
