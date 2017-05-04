@@ -110,7 +110,15 @@ document.write("</span>");
 //Users would be able to choose which Tier 1 items to highlight and which to not show.
 //Only for late game farming, which will be of item level 60+ here.
 document.write("<span id='Table3'>");
-document.write("<table id='Table3_1'>");
+document.write("<table id='Table3_1'><tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
+for (i = 0; i < getName(3,1).length; i++) {
+    document.write('<tr><td><input type="checkbox" id="d3_1_' + i + '" onclick="toggle(\'3_1_' + i + '\')" checked><label id = "s3_1_' + i + '" for="d3_1_' + i + '">Show</label>');
+    document.write('<td><table><td>' + getImage(3,1)[i] + '</td></table></td><td>');
+    for (j = 0; j < itemPreset.length; j++){
+      document.write('<input type="radio" id="c3_1_' + i + "_" + j + '" name="c3_1_' + i + '" value="' + j + '" onclick="update(\'3_1_' + i + '\',' + j + ');"><label for="c3_1_' + i + "_" + j + '">' + (j+1) + '</label>');
+    }
+    document.write('<td><table><td name="name" id="n3_1_' + i + '">' + getName(3,1)[i] + '</td></table></td></td><td></td></tr>');
+}
 document.write("</table>");
 document.write("</span>");
 //This will be the place for unique items
@@ -174,6 +182,12 @@ function init(){
       document.getElementById("c2_"+j+"_"+i+"_"+getDefault(2,j)[i]).checked = true;
     }
   }
+  for (j=1; j<=1; j++){
+    for (i=0; i<getName(3,j).length; i++){
+      update('3_'+j+'_'+i, getDefault(3,j)[i]);
+      document.getElementById("c3_"+j+"_"+i+"_"+getDefault(3,j)[i]).checked = true;
+    }
+  }
 }
 //Page Changing function since there are too many items in this damn game
 function menu(val){
@@ -191,6 +205,11 @@ function sMenu(val, val2){
       document.getElementById("Table2_" + i ).style.display = 'none';
     }
     document.getElementById("Table2_" + val2 ).style.display = 'block';
+  }else if (val == 3){
+    for(i=1; i<=1; i++){
+      document.getElementById("Table3_" + i ).style.display = 'none';
+    }
+    document.getElementById("Table3_" + val2 ).style.display = 'block';
   }
 }
 

@@ -11,6 +11,10 @@ function getImage(val, val2){
     }else if (val2 == 5){
       return ["BreachShardChaos.png", "BreachShardPhysical.png", "BreachShardLightning.png", "BreachShardFire.png", "BreachShardCold.png", "BreachUpgraderChaos.png", "BreachUpgraderPhysical.png", "BreachUpgraderLightning.png", "BreachUpgraderFire.png", "BreachUpgraderCold.png"];
     }
+  }else if (val == 3){
+    if (val2 == 1){
+      return ["Ngamahu's Flame", "Ewar's Mirage", "Chin Sol<br>Darkscorn", "Callinellus Malleus", "Wildslash", "Aurumvorax", "Shiversting", "Hand of Thought and Motion", "Xoph's Inception", "Widowmaker", "Ungil's Gauche", "Geofri's Baptism", "Axiom Perpetuum", "Breath of the Council", "Storm Prison", "Xoph's Nurture", "Dreadarc", "Xirgil's Crank", "Ichimonji", "Silverbough<br>Silverbranch", "The Supreme Truth<br>Nycta's Lantern", "Eclipse Solaris", "United in Dream<br>Severed in Sleep", "Death's Opus<br>Death's Harp<br>Iron Commander", "Infractem", "Relentless Fury", "Obliteration", "Kingmaker", "Voidhome", "Flesh-Eater", "Lifesprig", "Ephemeral Edge", "Innsbury Edge", "Chitus' Needle", "The Goddess Scorned<br>Lakishu's Blade", "Midnight Bargain", "Daresso's Passion", "Edge of Madness", "The Goddess Unleashed<br>Dreamfeather", "Kondo's Pride", "Arakaali's Fang<br>The Consuming Dark", "Mightflay", "Mortem Morsu", "Mjolner<br>Cameria's Maul", "Scaeva", "The Blood Thorn<br>Fencoil", "Abberath's Horn", "Trypanon<br>Chober Chaber", "Advancing Fortress<br>Ornament of the East", "Slivertongue<br>Nuro's Harp", "The Blood Reaper", "Bloodseeker", "Martyr of Innocence", "Rigwald's Charge", "Moonsorrow", "Windripper<br>Lioneye's Glare", "Hand of Wisdom and Action<br>Touch of Anguish<br>Izaro's Dilemma", "Tidebreaker", "Divinarius", "Agnerod East<br>Agnerod West<br>Agnerod South<br>Agnerod North", "Dyadus", "Starforge<br>Oro's Sacrifice", "Spine of the First Claimant", "Realm Ender<br>Realmshaper<br>Dying Breath", "The Gryphon<br>The Screaming Eagle", "Fidelitas' Spike", "Quecholli", "The Harvest", "Cospri's Malice", "Hegemony's Era<br>Pledge of Hands", "Kaom's Primacy", "Marohi Erqi", "Death's Hand", "Uul-Netol's Kiss", "The Searing Touch", "Hyaon's Fury", "Doomsower", "The Tempest<br>Storm Cloud", "Pillar of the Caged God", "Duskdawn<br>Taryn's Shiver", "Brain Rattler", "Rigwald's Command<br>Razor of the Seventh Sun", "Tremor Rod", "Last Resort", "Apep's Rage", "Frostbreath", "Queen's Escape<br>Queen's Decree", "Mark of the Doubting Knight", "Singularity", "Wideswing", "Femurs of the Saints", "Void Battery", "Ashcaller", "Null's Inclination", "Hiltless<br>The Dancing Dervish", "Roth's Reach", "Brutus' Lead Sprinkler", "Clayshaper", "Rigwald's Savagery", "Doomfletch's Prism<br>Doomfletch", "Heartbreaker", "The Stormheart", "Redbeak", "The Princess", "Shade of Solaris<br>Twyzel", "Sire of Shards", "Reaper's Pursuit", "The Dark Seer<br>Bitterdream", "Quill Rain", "Soul Taker", "Goredrill", "Bino's Kitchen Knife", "Hrimnor's Dirge<br>Hrimnor's Hymn", "Gorebreaker", "Reach of the Council<br>Voltaxic Rift", "Amplification Rod<br>Reverberation Rod<br>Tulborn", "Jorrhast's Blacksteel", "Bloodplay", "Wings of Entropy", "The Scourge<br>Rive", "Kongor's Undying Rage", "Cybil's Paw", "Terminus Est", "Al Dhih", "Moonbender's Wing", "Tulfall<br>Piscator's Vigil", "Prismatic Eclipse", "Atziri's Disfavour<br>Uul-Netol's Embrace<br>Hezmana's Bloodlust", "Varunastra<br>Rebuke of the Vaal", "Essentia Sanguis<br>Allure", "Jack, the Axe", "Doryani's Catalyst<br>Doon Cuebiyari", "The Whispering Ice", "Kitava's Feast", "Mon'tregul's Grasp", "Brightbeak<br>Lavianga's Wisdom", "The Tempestuous Steel", "The Goddess Bound", "The Cauteriser<br>Limbsplit"];
+    }
   }
 }
 
@@ -19,7 +23,6 @@ function getName (val, val2){
   if (val == 2){
     if (val2 == 1){
       return  ["Mirror of Kalandra", "Exalted Orb", "Divine Orb", "Orb of Regret", "Gemcutter's Prism", "Chaos Orb", "Vaal Orb", "Regal Orb", "Orb of Scouring", "Cartographer's Chisel", "Orb of Alchemy", "Blessed Orb", "Orb of Fusing", "Orb of Chance", "Glassblower's Bauble", "Chromatic Orb", "Jeweller's Orb", "Orb of Alteration", "Orb of Transmutation", "Orb of Augmentation", "Blacksmith's Whetstone", "Armourer's Scrap", "Scroll of Wisdom", "Portal Scroll", "Scroll Fragment", "Transmutation Shard", "Alteration Shard", "Alchemy Shard", "Stacked Deck", "Master Cartographer's Sextant", "Journeyman Cartographer's Sextant", "Apprentice Cartographer's Sextant", "Master Cartographer's Seal", "Journeyman Cartographer's Seal", "Apprentice Cartographer's Seal", "Unshaping Orb", "Eternal Orb", "Imprint", "Albino Rhoa Feather"];
-;
     }else if (val2 == 2){
       return ["Perandus Coin"];
     }else if (val2 == 3){
@@ -29,7 +32,10 @@ function getName (val, val2){
     }else if (val2 == 5){
       return ["Splinter of Chayula", "Splinter of Uul-Netol", "Splinter of Esh", "Splinter of Xoph", "Splinter of Tul", "Blessing of Chayula", "Blessing of Uul-Netol", "Blessing of Esh", "Blessing of Xoph", "Blessing of Tul"];
     }
-
+  }else if (val == 3){
+    if (val2 == 1){
+      return ["Abyssal Axe", "Antique Rapier", "Assassin Bow", "Auric Mace", "Awl", "Basket Rapier", "Bastard Sword", "Blinder", "Bone Bow", "Boot Blade", "Boot Knife", "Brass Maul", "Bronze Sceptre", "Carnal Sceptre", "Carved Wand", "Citadel Bow", "Cleaver", "Coiled Staff", "Corsair Sword", "Crude Bow", "Crystal Sceptre", "Crystal Wand", "Cutlass", "Death Bow", "Decimation Bow", "Decorative Axe", "Demon's Horn", "Despot Axe", "Dread Maul", "Dream Mace", "Driftwood Wand", "Dusk Blade", "Elder Sword", "Elegant Foil", "Elegant Sword", "Engraved Wand", "Estoc", "Etched Greatsword", "Eternal Sword", "Ezomyte Blade", "Fiend Dagger", "Flaying Knife", "Fright Claw", "Gavel", "Gladius", "Gnarled Branch", "Goat's Horn", "Great Mallet", "Gut Ripper", "Harbinger Bow", "Headsman Axe", "Hellion's Paw", "Highborn Staff", "Highland Blade", "Imbued Wand", "Imperial Bow", "Imperial Claw", "Imperial Maul", "Imperial Skean", "Imperial Staff", "Infernal Axe", "Infernal Sword", "Iron Sceptre", "Iron Staff", "Jade Hatchet", "Jagged Foil", "Jagged Maul", "Jasper Chopper", "Jewelled Foil", "Judgement Staff", "Karui Chopper", "Karui Maul", "Karui Sceptre", "Labrys", "Lathi", "Legion Sword", "Lion Sword", "Long Bow", "Long Staff", "Maelstrom Staff", "Meatgrinder", "Midnight Blade", "Military Staff", "Nailed Fist", "Opal Wand", "Ornate Mace", "Ornate Sword", "Platinum Kris", "Platinum Sceptre", "Poleaxe", "Primordial Staff", "Prophecy Wand", "Quartz Wand", "Ranger Bow", "Reaver Sword", "Recurve Bow", "Ritual Sceptre", "Rock Breaker", "Royal Axe", "Royal Bow", "Royal Skean", "Royal Staff", "Rusted Sword", "Sabre", "Sage Wand", "Serpentine Staff", "Shadow Axe", "Shadow Sceptre", "Short Bow", "Siege Axe", "Skinning Knife", "Slaughter Knife", "Sledgehammer", "Spiked Club", "Spine Bow", "Spiraled Wand", "Steelhead", "Stiletto", "Sundering Axe", "Terror Claw", "Terror Maul", "Thresher Claw", "Tiger Sword", "Timeworn Claw", "Tomahawk", "Tornado Wand", "Twilight Blade", "Vaal Axe", "Vaal Blade", "Vaal Claw", "Vaal Hatchet", "Vaal Sceptre", "Vile Staff", "Void Axe", "Void Sceptre", "War Hammer", "War Sword", "Whalebone Rapier", "Woodsplitter"];
+    }
   }
 }
 
@@ -45,6 +51,10 @@ function getDefault (val, val2){
       return [5, 4, 3, 3, 2, 1, 1, 5, 4, 3, 3, 2, 1, 1, 5, 4, 3, 3, 2, 1, 1, 5, 4, 3, 3, 2, 1, 1, 4, 3, 3, 2, 1, 1, 4, 3, 3, 2, 1, 1, 4, 3, 3, 2, 1, 1, 4, 3, 3, 2, 1, 1, 3, 3, 2, 1, 1, 3, 3, 2, 1, 1, 3, 3, 2, 1, 1, 3, 3, 2, 1, 1, 3, 2, 1, 1, 3, 2, 1, 1, 3, 2, 1, 1, 3, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1];
     }else if (val2 == 5){
       return [7 ,7 ,7 ,7 ,7 ,6 ,6 ,6 ,6 ,6];
+    }
+  }else if (val == 3){
+    if (val2 == 1){
+      return [2, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 2, 4, 2, 4, 2, 4, 5, 3, 4, 0, 5, 4, 4, 4, 1, 4, 4, 4, 4, 4, 4, 3, 2, 4, 4, 4, 4, 1, 4, 4, 2, 4, 4, 4, 4, 4, 2, 4, 4, 2, 4, 4, 1, 1, 1, 3, 1, 4, 1, 4, 5, 5, 4, 4, 2, 1, 2, 4, 4, 2, 3, 4, 4, 4, 5, 4, 1, 3, 1, 4, 4, 4, 4, 5, 4, 4, 4, 4, 0, 4, 4, 4, 4, 1, 2, 2, 5, 4, 4, 4, 4, 1, 4, 4, 4, 4, 1, 4, 3, 5, 4, 1, 5, 2, 4, 4, 2, 3, 4, 4, 4, 4, 2, 4, 1, 1, 4, 4, 2, 4, 1, 4, 4, 4, 4, 5];
     }
   }
 }
@@ -62,5 +72,5 @@ function getPreset(){
 }
 
 function getPresetRange(){
-  
+
 }
