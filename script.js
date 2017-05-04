@@ -67,7 +67,7 @@ document.write("</table>");
 document.write("<table id='Table2_2'><tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < getName(2,2).length; i++) {
     document.write('<tr><td><input type="checkbox" id="d2_2_' + i + '" onclick="toggle(\'2_2_' + i + '\')" checked><label id = "s2_2_' + i + '" for="d2_2_' + i + '">Show</label>');
-    document.write('<td><table><td><img src="currency/' + getImage(2,2)[i] + '" height="30" width="30"></td></table></td><td>');
+    document.write('<td><table><td><img src="/currency/' + getImage(2,2)[i] + '" height="30" width="30"></td></table></td><td>');
     for (j = 0; j < itemPreset.length; j++){
       document.write('<input type="radio" id="c2_2_' + i + "_" + j + '" name="c2_2_' + i + '" value="' + j + '" onclick="update(\'2_2_' + i + '\',' + j + ');"><label for="c2_2_' + i + "_" + j + '">' + (j+1) + '</label>');
     }
@@ -77,7 +77,7 @@ document.write("</table>");
 document.write("<table id='Table2_3'><tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < getName(2,3).length; i++) {
     document.write('<tr><td><input type="checkbox" id="d2_3_' + i + '" onclick="toggle(\'2_3_' + i + '\')" checked><label id = "s2_3_' + i + '" for="d2_3_' + i + '">Show</label>');
-    document.write('<td><table><td><img src="currency/' + getImage(2,3)[i] + '" height="30" width="30"></td></table></td><td>');
+    document.write('<td><table><td><img src="/currency/' + getImage(2,3)[i] + '" height="30" width="30"></td></table></td><td>');
     for (j = 0; j < itemPreset.length; j++){
       document.write('<input type="radio" id="c2_3_' + i + "_" + j + '" name="c2_3_' + i + '" value="' + j + '" onclick="update(\'2_3_' + i + '\',' + j + ');"><label for="c2_3_' + i + "_" + j + '">' + (j+1) + '</label>');
     }
@@ -87,7 +87,7 @@ document.write("</table>");
 document.write("<table id='Table2_4'><tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < getName(2,4).length; i++) {
     document.write('<tr><td><input type="checkbox" id="d2_4_' + i + '" onclick="toggle(\'2_4_' + i + '\')" checked><label id = "s2_4_' + i + '" for="d2_4_' + i + '">Show</label>');
-    document.write('<td><table><td><img src="currency/' + getImage(2,4)[i] + '" height="30" width="30"></td></table></td><td>');
+    document.write('<td><table><td><img src="./currency/' + getImage(2,4)[i] + '" height="30" width="30"></td></table></td><td>');
     for (j = 0; j < itemPreset.length; j++){
       document.write('<input type="radio" id="c2_4_' + i + "_" + j + '" name="c2_4_' + i + '" value="' + j + '" onclick="update(\'2_4_' + i + '\',' + j + ');"><label for="c2_4_' + i + "_" + j + '">' + (j+1) + '</label>');
     }
@@ -97,7 +97,7 @@ document.write("</table>");
 document.write("<table id='Table2_5'><tr><td></td><td>Item</td><td>Filter Presets</td><td>Preview</td></tr>");
 for (i = 0; i < getName(2,5).length; i++) {
     document.write('<tr><td><input type="checkbox" id="d2_5_' + i + '" onclick="toggle(\'2_5_' + i + '\')" checked><label id = "s2_5_' + i + '" for="d2_5_' + i + '">Show</label>');
-    document.write('<td><table><td><img src="currency/' + getImage(2,5)[i] + '" height="30" width="30"></td></table></td><td>');
+    document.write('<td><table><td><img src="../currency/' + getImage(2,5)[i] + '" height="30" width="30"></td></table></td><td>');
     for (j = 0; j < itemPreset.length; j++){
       document.write('<input type="radio" id="c2_5_' + i + "_" + j + '" name="c2_5_' + i + '" value="' + j + '" onclick="update(\'2_5_' + i + '\',' + j + ');"><label for="c2_5_' + i + "_" + j + '">' + (j+1) + '</label>');
     }
